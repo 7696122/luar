@@ -1,6 +1,9 @@
-(ns luar.core)
+(ns luar.core
+  (:require [compojure.core :refer :all]
+            [org.httpkit.server :refer [run-server]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defroutes myapp
+  (GET "/" [] "Hello W"))
+
+(defn -main []
+  (run-server myapp {:port 5000}))
