@@ -9,11 +9,12 @@
                         :compiler {:output-to "war/javascripts/main.js"
                                    :optimizations :whitespace
                                    :pretty-print true}}]}
-  :hooks [leiningen.cljsbuild]
+  ;; :hooks [leiningen.cljsbuild]
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [http-kit "2.1.19"]
                  [compojure "1.4.0"]
                  [ring/ring-devel "1.4.0"]
                  [ring/ring-core "1.4.0"] 
                  [ring/ring-defaults "0.1.5"]
-                 [org.clojure/clojurescript "1.7.48"]])
+                 [org.clojure/clojurescript "1.7.48"]
+                 [ring-refresh "0.1.2"]])
