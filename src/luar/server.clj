@@ -2,17 +2,16 @@
   (:use [org.httpkit.server :only [run-server]])
   (:require [ring.middleware.reload :as reload]
             [ring.util.response :as response]
-            ;; [ring.middleware.refresh :as refresh]
+            [ring.middleware.refresh :as refresh]
 
             [compojure.core :refer [defroutes GET POST]]
             [compojure.route :as route]))
 
-;; (def server
-;;   (refresh/wrap-refresh all-routes))
+(def server
+  (refresh/wrap-refresh all-routes))
 
 (defroutes all-routes
-  (GET "/" [] 
-       (response/file-response "index.html" {:root "resources/public"}))
+  (GET "/" [] (response/file-response "index.html" {:root "resources/public"}))
   (route/not-found "<h1>Page not found.</h1>"))
 
 (defn in-dev? [& args] true)

@@ -1,5 +1,4 @@
 (ns luar.core
-<<<<<<< HEAD
   (:use org.httpkit.server))
 
 (defn app [req]
@@ -28,13 +27,3 @@
   ;; You may want to take a look: https://github.com/clojure/tools.namespace
   ;; and http://http-kit.org/migration.html#reload
   (reset! server (run-server #'app {:port 8080})))
-=======
-  (:require [compojure.core :refer :all]
-            [org.httpkit.server :refer [run-server]]))
-
-(defroutes myapp
-  (GET "/" [] "Hello W"))
-
-(defn -main []
-  (run-server myapp {:port 5000}))
->>>>>>> 5a9394e7ef7ac91129c9838a1497c3a238027c7d
