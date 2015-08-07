@@ -11,8 +11,8 @@
   (GET "/" [] (response/file-response "index.html" {:root "resources/public"}))
   (route/not-found "<h1>Page not found.</h1>"))
 
-(def server
-  (refresh/wrap-refresh all-routes))
+;; (def server
+;;   (refresh/wrap-refresh all-routes))
 
 (defn in-dev? [& args] true)
 
